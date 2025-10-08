@@ -30,6 +30,18 @@
 # Name the first function "retrieve_age_eafp" and follow EAFP
 # Name the second function "retrieve_age_lbyl" and follow lbyl
 
+def retrieve_age_eafp(person_dict):
+    try:
+        return 2024 - person_dict['birth']
+    except KeyError:
+        return "Birth year not found"
+
+def retrieve_age_lbyl(person_dict):
+    if 'birth' in person_dict:
+        return 2024 - person_dict['birth']
+    else:
+        return "Birth year not found"
+    
 # 4)
 # Imagine you have a file named data.csv. 
 # Create a function called "read_data" that reads the file
