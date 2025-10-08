@@ -11,6 +11,16 @@
 # "Undefined instruction for color: <light>" 
 # where <light> is the value of the parameter light.
 #
+def car_at_light(light):
+    if light == "red":
+        return "stop"
+    elif light == "green":
+        return "go"
+    elif light == "yellow":
+        return "wait"
+    else:
+        raise Exception(f"Undefined instruction for color: {light}")
+    
 
 # 2)
 # Create a function named "safe_subtract" that
@@ -20,6 +30,14 @@
 # it returns None.
 # If there is any other reason why it fails show the problem 
 # 
+def safe_subtract(a,b):
+    try:
+        return a - b
+    except TypeError:
+        return None
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
 
 # 3)
 # Imagine you have a dictionary with the attributes of a person
